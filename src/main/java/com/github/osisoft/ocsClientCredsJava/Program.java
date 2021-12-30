@@ -16,7 +16,6 @@ public class Program {
     // Step 1: get needed variables 
     static Appsettings appsettings = getAppsettings();
 
-    // get configuration
     static String tenantId = appsettings.getTenantId();
     static String apiVersion = appsettings.getApiVersion();
     static String resource = appsettings.getResource();
