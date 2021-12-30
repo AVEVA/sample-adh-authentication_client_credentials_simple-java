@@ -5,8 +5,8 @@ import java.io.InputStream;
 import java.io.*;
 import java.net.*;
 import java.nio.charset.StandardCharsets;
-import java.util.Properties;
-import java.util.zip.GZIPInputStream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -20,8 +20,8 @@ public class Program {
     static String tenantId = appsettings.getTenantId();
     static String apiVersion = appsettings.getApiVersion();
     static String resource = appsettings.getResource();
-	static String clientId = appsettings.getClientId();
-	static String clientSecret = appsettings.getClientSecret();
+    static String clientId = appsettings.getClientId();
+    static String clientSecret = appsettings.getClientSecret();
 
     public static void main(String[] args) throws IOException {
         // Step 2: get the authentication endpoint from the discovery URL
@@ -62,11 +62,10 @@ public class Program {
         URL tenant = new URL(resource + "/api/" + apiVersion + "/Tenants/" + tenantId);
         HttpURLConnection tenantRequest = (HttpURLConnection) tenant.openConnection();
         tenantRequest.setRequestProperty("Authorization", "Bearer " + accessToken);
-        tenantRequest.setRequestProperty("Accept", "application/json"); //TODO: is this required?
         tenantRequest.connect();
 
 		// test it by making sure we got a valid http status code
-        System.out.println(tenantRequest.getResponseCode());
+        assertEquals(tenantRequest.getResponseCode(), 200);
 
     }
 
@@ -84,7 +83,6 @@ public class Program {
                 byte[] bytes = new byte[bytesToRead];
                 inputStream.read(bytes);
                 fileString = new String(bytes);
-                // inputStream.close(); // TODO: is this necessary?
             }
 
             appsettings = mGson.fromJson(fileString, Appsettings.class);
