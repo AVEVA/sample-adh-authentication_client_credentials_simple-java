@@ -45,9 +45,20 @@ jobs:
       name: 00-OSIManaged-Containers
       demands: Agent.OS -equals $(agentOS)
     steps:
+      - checkout: self
+        path: 's'
       - template: '/miscellaneous/build_templates/appsettings.yml@templates'
         parameters:
           secrets: 'TenantId, ClientId, ClientSecret'
+
+      - task: JavaToolInstaller@0
+        inputs:
+          versionSpec: '11'
+          jdkArchitectureOption: 'x64'
+          jdkSourceOption: 'PreInstalled'
+          jdkDestinationDirectory: '$(Agent.ToolsDirectory)/jdk11'
+          cleanDestinationDirectory: false
+        condition: eq(variables['Agent.OS'], 'Linux')
 
       - task: Maven@3
         inputs:
@@ -59,3 +70,14 @@ jobs:
         displayName: 'Run tests'
 
   - template: '/miscellaneous/build_templates/code-analysis.yml@templates'
+    parameters:
+      buildSteps:
+        - checkout: self
+          path: 's'
+
+        - task: Maven@3
+          inputs:
+            mavenPomFile: '$(Build.SourcesDirectory)/pom.xml'
+            goals: 'package'
+            options: '-DskipTests'
+          displayName: 'Build'
