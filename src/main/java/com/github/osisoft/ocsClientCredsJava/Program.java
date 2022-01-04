@@ -23,6 +23,10 @@ public class Program {
     static String clientSecret = appsettings.getClientSecret();
 
     public static void main(String[] args) throws IOException {
+        toRun();
+    }
+
+    public static boolean toRun() throws IOException {
         // Step 2: get the authentication endpoint from the discovery URL
         URL discoveryUrl = new URL(resource + "/identity/.well-known/openid-configuration");
         URLConnection request = discoveryUrl.openConnection();
@@ -63,11 +67,9 @@ public class Program {
         tenantRequest.setRequestProperty("Authorization", "Bearer " + accessToken);
         tenantRequest.connect();
 
-		// test it by making sure we got a valid http status code
-        assertEquals(tenantRequest.getResponseCode(), 200);
-
+		// return whether the status code was 200 OK in order to test the function
+        return tenantRequest.getResponseCode() == 200;
     }
-
 
     private static Appsettings getAppsettings() {
         Gson mGson = new Gson();
@@ -92,5 +94,4 @@ public class Program {
 
         return appsettings;
     }
-
 }
