@@ -36,7 +36,7 @@ public class Program {
                 .getAsJsonObject();
         String tokenUrl = rootObj.get("token_endpoint").getAsString();
 
-		// Step 3: use the client ID and Secret to get the needed bearer token
+        // Step 3: use the client ID and Secret to get the needed bearer token
         String accessToken = null;
         URL token = new URL(tokenUrl);
         HttpURLConnection tokenRequest = (HttpURLConnection) token.openConnection();
@@ -61,13 +61,13 @@ public class Program {
         JsonObject response = JsonParser.parseString(result).getAsJsonObject();
         accessToken = response.get("access_token").getAsString();
 
-		// Step 4: test token by calling the base tenant endpoint
+        // Step 4: test token by calling the base tenant endpoint
         URL tenant = new URL(resource + "/api/" + apiVersion + "/Tenants/" + tenantId);
         HttpURLConnection tenantRequest = (HttpURLConnection) tenant.openConnection();
         tenantRequest.setRequestProperty("Authorization", "Bearer " + accessToken);
         tenantRequest.connect();
 
-		// return whether the status code was 200 OK in order to test the function
+        // return whether the status code was 200 OK in order to test the function
         return tenantRequest.getResponseCode() == 200;
     }
 

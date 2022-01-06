@@ -55,6 +55,8 @@ mvn test
 
 ---
 
-Tested against Maven 3.6.3 and Java 15.0.2
+Tested against Maven 3.6.3 and Java 15.0.2  
+
+For the main OCS Authentication samples page [ReadMe](https://github.com/osisoft/OSI-Samples-OCS/blob/main/docs/AUTHENTICATION.md)  
 For the main OCS samples page [ReadMe](https://github.com/osisoft/OSI-Samples-OCS)  
 For the main OSIsoft samples page [ReadMe](https://github.com/osisoft/OSI-Samples)
