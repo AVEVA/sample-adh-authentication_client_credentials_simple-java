@@ -10,6 +10,9 @@ Developed against Maven 3.6.3 and Java 15.0.2
 
 - Java 15.0+
 - Register a [Client-Credentials Client](https://cloud.osisoft.com/clients) in your OSIsoft Cloud Services tenant and create a client secret to use in the configuration of this sample. ([Video Walkthrough](https://www.youtube.com/watch?v=JPWy0ZX9niU))
+  - __NOTE__: This sample only requires the `Tenant Member` role to run successfully 
+    - see: ['Authorization Allowed for these roles' in the documentation](https://docs.osisoft.com/bundle/ocs/page/api-reference/tenant/tenant-tenants.html#get-tenant) 
+  - It is strongly advised to not elevate the permissions of the client beyond what is necessary.
 
 ## About this sample
 
