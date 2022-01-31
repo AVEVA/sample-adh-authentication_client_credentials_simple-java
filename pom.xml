@@ -4,11 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.osisoft.ocsClientCredsJava</groupId>
-    <artifactId>ocsClientCredsJava</artifactId>
+    <groupId>com.github.aveva.adhClientCredsJava</groupId>
+    <artifactId>adhClientCredsJava</artifactId>
     <version>1.0.0</version>
-    <name>ocsClientCredsJava</name>
-    <url>https://github.com/osisoft/sample-ocs-authentication_client_credentials_simple-java</url>
+    <name>adhClientCredsJava</name>
+    <url>https://github.com/osisoft/sample-adh-authentication_client_credentials_simple-java</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -101,7 +101,7 @@
                         </execution>
                     </executions>
                     <configuration>
-                        <mainClass>com.github.osisoft.ocsClientCredsJava.Program</mainClass>
+                        <mainClass>com.github.aveva.adhClientCredsJava.Program</mainClass>
                     </configuration>
                 </plugin>
             </plugins>

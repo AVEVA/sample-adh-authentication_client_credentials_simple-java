@@ -1,7 +1,7 @@
 /** Program.java
  * 
  */
-package com.github.osisoft.ocsClientCredsJava;
+package com.github.aveva.adhClientCredsJava;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

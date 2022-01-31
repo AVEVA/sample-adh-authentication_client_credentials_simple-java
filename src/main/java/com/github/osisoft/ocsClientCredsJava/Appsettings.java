@@ -1,4 +1,4 @@
-package com.github.osisoft.ocsClientCredsJava;
+package com.github.aveva.adhClientCredsJava;
 
 public class Appsettings {
   private String Resource;

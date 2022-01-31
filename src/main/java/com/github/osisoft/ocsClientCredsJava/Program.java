@@ -1,4 +1,4 @@
-package com.github.osisoft.ocsClientCredsJava;
+package com.github.aveva.adhClientCredsJava;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
