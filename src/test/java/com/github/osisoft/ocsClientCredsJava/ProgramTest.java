@@ -1,4 +1,4 @@
-/** Program.java
+/** ProgramTest.java
  * 
  */
 package com.github.aveva.adhClientCredsJava;
