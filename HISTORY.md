@@ -3,6 +3,7 @@
 ## 1.0.2 / 2022-08-02
 
 - Add dependabot.yml to automate dependency checks
+- Remove weekly tests
 
 ## 1.0.1 / 2022-03-15
 
