@@ -6,7 +6,7 @@
 
     <groupId>com.github.aveva.adhClientCredsJava</groupId>
     <artifactId>adhClientCredsJava</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <name>adhClientCredsJava</name>
     <url>https://github.com/osisoft/sample-adh-authentication_client_credentials_simple-java</url>
 
