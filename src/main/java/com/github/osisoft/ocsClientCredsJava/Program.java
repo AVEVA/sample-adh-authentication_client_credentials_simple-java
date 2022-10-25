@@ -5,6 +5,8 @@ import java.io.InputStream;
 import java.io.*;
 import java.net.*;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -76,18 +78,10 @@ public class Program {
 
         Appsettings appsettings = new Appsettings();
 
-        try (InputStream inputStream = new FileInputStream("appsettings.json")) {
-            String fileString = null;
-            int bytesToRead = inputStream.available();
-
-            if (bytesToRead > 0) {
-                byte[] bytes = new byte[bytesToRead];
-                inputStream.read(bytes);
-                fileString = new String(bytes);
-            }
-
-            appsettings = mGson.fromJson(fileString, Appsettings.class);
-
+        try {
+            Reader reader = Files.newBufferedReader(Paths.get("appsettings.json"))
+            appsettings = mGson.fromJson(reader, Appsettings.class);
+            reader.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
