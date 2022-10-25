@@ -79,7 +79,7 @@ public class Program {
         Appsettings appsettings = new Appsettings();
 
         try {
-            Reader reader = Files.newBufferedReader(Paths.get("appsettings.json"))
+            Reader reader = Files.newBufferedReader(Paths.get("appsettings.json"));
             appsettings = mGson.fromJson(reader, Appsettings.class);
             reader.close();
         } catch (Exception e) {
