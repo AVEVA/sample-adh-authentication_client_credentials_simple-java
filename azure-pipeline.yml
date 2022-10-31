@@ -59,12 +59,10 @@ jobs:
         parameters:
           secrets: 'TenantId, ClientId, ClientSecret, Resource'
           
-      - script: |
-          curl -s "https://get.sdkman.io" | bash
-          source "/root/.sdkman/bin/sdkman-init.sh"
-          sdk install java
-          sdk install maven
-        condition: eq(variables['Agent.OS'], 'Linux')
+      - script:
+          wget https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz
+          sudo tar -xzvf apache-maven-3.8.6-bin.tar.gz
+        workingDirectory: /usr/share/maven
         
       - script: mvn -version
 
