@@ -59,6 +59,9 @@ jobs:
         parameters:
           secrets: 'TenantId, ClientId, ClientSecret, Resource'
           
+      - script: curl -s "https://get.sdkman.io" | bash
+        condition: eq(variables['Agent.OS'], 'Linux')
+          
       - script: sdk install maven
         condition: eq(variables['Agent.OS'], 'Linux')
 
