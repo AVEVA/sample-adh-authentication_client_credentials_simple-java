@@ -61,10 +61,10 @@ jobs:
           
       - task: JavaToolInstaller@0
         inputs:
-          versionSpec: '17'
+          versionSpec: '18'
           jdkArchitectureOption: 'x64'
           jdkSourceOption: 'PreInstalled'
-          jdkDestinationDirectory: '$(Agent.ToolsDirectory)/jdk17'
+          jdkDestinationDirectory: '$(Agent.ToolsDirectory)/jdk18'
           cleanDestinationDirectory: false
         condition: eq(variables['Agent.OS'], 'Linux')
 
