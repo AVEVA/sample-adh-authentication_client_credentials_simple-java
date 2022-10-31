@@ -67,7 +67,7 @@ jobs:
           versionSpec: '11'
           jdkArchitectureOption: 'x64'
           jdkSourceOption: 'LocalDirectory'
-          jdkFile: "$(Build.SourcesDirectory)/jdk-11_linux-x64_bin.tar.gz"
+          jdkFile: "$(Build.SourcesDirectory)/jdk-11.0.16.1_linux-x64_bin.tar.gz"
           jdkDestinationDirectory: '$(Agent.ToolsDirectory)/jdk19'
           cleanDestinationDirectory: false
         condition: eq(variables['Agent.OS'], 'Linux')
