@@ -65,7 +65,7 @@ jobs:
         workingDirectory: /usr/share/maven
         condition: eq(variables['Agent.OS'], 'Linux')
         
-      - bash: export maven=/usr/share/maven/apache-maven-3.8.6
+      - bash: export MAVEN_HOME=/usr/share/maven/apache-maven-3.8.6
         condition: eq(variables['Agent.OS'], 'Linux')
         
       - script: mvn -version
